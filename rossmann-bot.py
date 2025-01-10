@@ -97,7 +97,7 @@ def index():
         
         message = request.get_json()
         chat_id, store_id = parse_message(message)
-        if store_id != 'error':
+        if (store_id != 'error') and (store_id != 0):
             #loading data
             data = load_dataset(store_id)
             if data != 'error':
